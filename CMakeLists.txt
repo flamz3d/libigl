@@ -24,6 +24,8 @@ option(LIBIGL_BUILD_TESTS      "Build libigl unit test"        ${LIBIGL_TOPLEVEL
 option(LIBIGL_BUILD_TUTORIALS  "Build libigl tutorial"         ${LIBIGL_TOPLEVEL_PROJECT})
 option(LIBIGL_EXPORT_TARGETS   "Export libigl CMake targets"   ${LIBIGL_TOPLEVEL_PROJECT})
 
+option(LIBIGL_BUILD_CSHARP_BINDINGS  "Build libigl bindings for C#"         ${LIBIGL_TOPLEVEL_PROJECT})
+
 # USE_STATIC_LIBRARY speeds up the generation of multiple binaries,
 # at the cost of a longer initial compilation time
 # (by default, static build is off since libigl is a header-only library)
@@ -60,6 +62,10 @@ include(libigl)
 
 if(LIBIGL_BUILD_TUTORIALS)
 	add_subdirectory(tutorial)
+endif()
+
+if(LIBIGL_BUILD_CSHARP_BINDINGS)
+	add_subdirectory(csharp_bindings)
 endif()
 
 if(LIBIGL_BUILD_TESTS)

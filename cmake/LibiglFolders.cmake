@@ -50,6 +50,10 @@ igl_folder_targets("Libigl"
     igl_xml
 )
 
+igl_folder_targets("csharp_bindings"
+    iglu_bin
+)
+
 igl_folder_targets("Unit Tests"
     libigl_tests
 )
